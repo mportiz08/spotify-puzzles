@@ -1,6 +1,6 @@
 # Reversed Binary
 
-Problem ID: `reversebinary`
+Problem ID: [reversebinary](http://www.spotify.com/us/jobs/tech/reversed-binary/)
 
 Difficulty: `Reggae`
 
