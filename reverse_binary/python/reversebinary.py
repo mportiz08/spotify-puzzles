@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 
+"""
+reversebinary
+~~~~~~~~~~~~~
+
+This is my solution to Spotify's Reversed Binary Tech Puzzle.
+"""
+
 import sys
 
 def most_significant_bit(num):
@@ -24,11 +31,13 @@ def reverse_binary_number(num):
   
   return reversed
 
-def main():
+def main(argv=None):
   orig_num = int(sys.stdin.readline())
   reversed = reverse_binary_number(orig_num)
-  
   print(str(reversed))
+  
+  return 0
 
 if __name__ == '__main__':
-  main()
+  status = main()
+  sys.exit(status)
