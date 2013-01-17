@@ -14,7 +14,7 @@ class TestZipfsong < Test::Unit::TestCase
   
   def test_sample_two
     songs = [
-      Zipfsong::Song.new(197812 're_hash', 1),
+      Zipfsong::Song.new(197812, 're_hash', 1),
       Zipfsong::Song.new(78906, '5_4', 2),
       Zipfsong::Song.new(189518, 'tomorrow_comes_today', 3),
       Zipfsong::Song.new(39453, 'new_genious', 4),

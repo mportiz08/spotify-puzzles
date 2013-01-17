@@ -19,7 +19,7 @@ module Zipfsong
     end
     
     def quality
-      listens.to_f / track.to_f
+      listens * track
     end
   end
   
