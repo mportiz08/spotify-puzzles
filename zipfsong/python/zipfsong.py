@@ -29,14 +29,14 @@ def parse_songs():
     listens = int(next_line.split()[0])
     name    = next_line.split()[1]
     song    = Song(listens, name, i + 1)
-    heapq.heappush(songs, (-song.quality(), song))
+    heapq.heappush(songs, (-song.quality(), song.track, song))
   
   return num_selections, songs
 
 def main(argv=None):
   num_selections, songs = parse_songs()
   for i in range(num_selections):
-    song = heapq.heappop(songs)[1]
+    song = heapq.heappop(songs)[2]
     print(song.name)
   
   return 0
