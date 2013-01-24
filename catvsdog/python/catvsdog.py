@@ -17,21 +17,21 @@ class Voter(object):
 def parse_test_case(input):
   num_cats, num_dogs, num_voters = [int(i) for i in input.readline().split()]
   
-  voters = []
-  num_dog_lovers, num_cat_lovers = 0, 0
-  while(len(voters) < num_voters):
-    voter = Voter(input.readline().strip())
-    voters.append(voter)
-    if voter.is_dog_person: num_dog_lovers += 1
-    if voter.is_cat_person: num_cat_lovers += 1
+  if num_voters == 0:
+    print(num_voters)
+    return
   
-  num_satisfied = 0
-  if num_dog_lovers == num_cat_lovers:
-    num_satisfied = num_dog_lovers
-  else:
-    num_satisfied = max([num_dog_lovers, num_cat_lovers])
+  votes_keep, votes_throw_out = {}, {}
+  voters_parsed = 0
+  while(voters_parsed < num_voters):
+    vote_keep, vote_throw_out = input.readline().split()
+    votes_keep[vote_keep] = votes_keep.get(vote_keep, 0) + 1
+    votes_throw_out[vote_throw_out] = votes_throw_out.get(vote_throw_out, 0) + 1
+    voters_parsed += 1
   
-  print str(num_satisfied)
+  sorted_keep = sorted(votes_keep.iteritems())[0][1]
+  sorted_throw_out = sorted(votes_throw_out.iteritems())[0][1]
+  print(max([sorted_keep, sorted_throw_out]))
 
 def parse_test_cases(input):
   total_test_cases  = int(input.readline().strip())
